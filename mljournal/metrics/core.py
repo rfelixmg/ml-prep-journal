@@ -1,9 +1,7 @@
-import numpy as no
-
-from typing import List, Dict
+from abc import abstractmethod
+from typing import Dict, List
 from numpy.typing import ArrayLike
 
-from abc import abstractmethod
 
 class CoreMetric:
     def __init__(self, *args: List, **kwargs: Dict) -> None:
@@ -14,8 +12,8 @@ class CoreMetric:
 
     @abstractmethod
     def forward(self, *args, **kwargs) -> ArrayLike:
-        raise NotImplemented()
-    
+        raise NotImplementedError()
+
     @abstractmethod
     def backward(self, *args, **kwargs) -> ArrayLike:
-        raise NotImplemented()
+        raise NotImplementedError()
